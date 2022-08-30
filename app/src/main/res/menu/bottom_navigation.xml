@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_notice_board"
+        android:icon="@drawable/ic_noticeboard"
+        android:title="Noticeboard"/>
+    <item
+        android:id="@+id/nav_complaints"
+        android:icon="@drawable/ic_complain"
+        android:title="Complaints"/>
+    <item
+        android:id="@+id/nav_accounts"
+        android:icon="@drawable/ic_accounts"
+        android:title="Accounts"/>
+    <item
+        android:id="@+id/nav_rules"
+        android:icon="@drawable/ic_rules"
+        android:title="Rules"/>
+    <item
+        android:id="@+id/nav_contact"
+        android:icon="@drawable/ic_contact"
+        android:title="Contact"/>
+</menu>

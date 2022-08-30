@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="8dp"
+    android:layout_margin="10dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/notice_img"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/rakhsya" />
+
+
+       <TextView
+           android:id="@+id/notice_title"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Rakshya Bandhan"
+           android:textSize="20sp"
+           android:fontFamily="@font/alfa_slab_one"
+           android:layout_toRightOf="@id/notice_img"
+           android:layout_marginLeft="10dp"
+           android:textColor="@color/colorAccent"
+           android:lineHeight="20dp"
+           android:layout_marginStart="10dp"
+           android:layout_toEndOf="@id/notice_img"/>
+
+<!--        <RatingBar-->
+<!--            android:id="@+id/notice_progress"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            style="@style/Widget.AppCompat.RatingBar.Small"-->
+<!--            android:layout_below="@+id/notice_title"-->
+<!--            android:layout_toRightOf="@id/notice_img"-->
+<!--            android:rating="4"-->
+<!--            android:layout_marginLeft="10dp"/>-->
+        
+        <TextView
+            android:id="@+id/notice_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rakhi Ceremony will be held in the Visitor's Lounge along with Janai Purnima Ceremony"
+            android:layout_below="@id/notice_title"
+            android:layout_toRightOf="@id/notice_img"
+            android:padding="10dp"/>
+
+        
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+

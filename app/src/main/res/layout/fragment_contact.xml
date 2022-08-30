@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/account_cust">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alfa_slab_one"
+                    android:text="Contact Info"
+                    android:textSize="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/black"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/account_card"
+                    android:layout_marginBottom="8dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/olekar"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical"
+                        >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr Krishnappa Olekar"
+                        android:textSize="18dp"
+                        android:layout_marginTop="50dp"
+                        android:fontFamily="@font/alfa_slab_one"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Secretary, IH"
+                        android:textSize="20dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/antic"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1234567890"
+                            android:textSize="20dp"
+                            android:layout_marginTop="0dp"
+                            android:fontFamily="@font/antic"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/account_card"
+                    android:layout_marginBottom="8dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/madhu"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr Madhusudhan K N"
+                            android:textSize="18dp"
+                            android:layout_marginTop="50dp"
+                            android:fontFamily="@font/alfa_slab_one"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Warden, IH Boys"
+                            android:textSize="20dp"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/antic"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1234567890"
+                            android:textSize="20dp"
+                            android:layout_marginTop="0dp"
+                            android:fontFamily="@font/antic"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/account_card"
+                    android:layout_marginBottom="8dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/shyamala"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr Shyamala G"
+                            android:textSize="18dp"
+                            android:layout_marginTop="50dp"
+                            android:fontFamily="@font/alfa_slab_one"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Warden, IH Girls"
+                            android:textSize="20dp"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/antic"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1234567890"
+                            android:textSize="20dp"
+                            android:layout_marginTop="0dp"
+                            android:fontFamily="@font/antic"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/account_card"
+                    android:layout_marginBottom="8dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/chandrakala"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Chandrakala G Raju"
+                            android:textSize="18dp"
+                            android:layout_marginTop="50dp"
+                            android:fontFamily="@font/alfa_slab_one"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Warden,NH in IH Girls"
+                            android:textSize="20dp"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/antic"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1234567890"
+                            android:textSize="20dp"
+                            android:layout_marginTop="0dp"
+                            android:fontFamily="@font/antic"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/account_card"
+                    android:layout_marginBottom="8dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/olekar"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr Krishnappa Olekar"
+                            android:textSize="18dp"
+                            android:layout_marginTop="50dp"
+                            android:fontFamily="@font/alfa_slab_one"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Secretary, IH"
+                            android:textSize="20dp"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/antic"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1234567890"
+                            android:textSize="20dp"
+                            android:layout_marginTop="0dp"
+                            android:fontFamily="@font/antic"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/account_card"
+                    android:layout_marginBottom="8dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/madhu"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr Madhusudhan K N"
+                            android:textSize="18dp"
+                            android:layout_marginTop="50dp"
+                            android:fontFamily="@font/alfa_slab_one"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Warden, IH Boys"
+                            android:textSize="20dp"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/antic"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1234567890"
+                            android:textSize="20dp"
+                            android:layout_marginTop="0dp"
+                            android:fontFamily="@font/antic"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/account_card"
+                    android:layout_marginBottom="8dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/shyamala"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr Shyamala G"
+                            android:textSize="18dp"
+                            android:layout_marginTop="50dp"
+                            android:fontFamily="@font/alfa_slab_one"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Warden, IH Girls"
+                            android:textSize="20dp"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/antic"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1234567890"
+                            android:textSize="20dp"
+                            android:layout_marginTop="0dp"
+                            android:fontFamily="@font/antic"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/account_card"
+                    android:layout_marginBottom="8dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/chandrakala"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Chandrakala G Raju"
+                            android:textSize="18dp"
+                            android:layout_marginTop="50dp"
+                            android:fontFamily="@font/alfa_slab_one"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Warden,NH in IH Girls"
+                            android:textSize="20dp"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/antic"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1234567890"
+                            android:textSize="20dp"
+                            android:layout_marginTop="0dp"
+                            android:fontFamily="@font/antic"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
