@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static  int SPLASH_SCREEN=2500;
+    private static int SPLASH_SCREEN = 2500;
 
     //Variables
     Animation topAnim, bottomAnim;
@@ -26,16 +26,15 @@ public class MainActivity extends AppCompatActivity {
     TextView slogan;
 
 
-
     @Override
-    protected void onCreate (Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN );
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
         //Animations
-        topAnim= AnimationUtils.loadAnimation(this,R.anim.top_animation);
-        bottomAnim= AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
+        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
+        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
 
         //Hooks
         logo = findViewById(R.id.imageView);
@@ -47,20 +46,20 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this,Login.class);
+                Intent intent = new Intent(MainActivity.this, Login.class);
                 //startActivity(intent);
                 //finish();
-                Pair[] pairs=new Pair[2];
-                pairs[0] = new Pair<View,String>(logo,"logo_image");
-                pairs[1] = new Pair<View,String>(slogan,"logo_text");
+                Pair[] pairs = new Pair[2];
+                pairs[0] = new Pair<View, String>(logo, "logo_image");
+                pairs[1] = new Pair<View, String>(slogan, "logo_text");
 
-                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, pairs);
                     startActivity(intent, options.toBundle());
                     finish();
                 }
             }
-        },SPLASH_SCREEN );
+        }, SPLASH_SCREEN);
 
     }
 }

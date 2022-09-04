@@ -20,38 +20,37 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-
 public class Signup extends AppCompatActivity {
 
-    EditText firstname, lastname, username,email, phone, room , password;
-    Button submit,login;
+    EditText firstname, lastname, username, email, phone, room, password;
+    Button submit, login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN );
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_signup);
 
 
-        firstname=findViewById(R.id.first_name);
-        lastname=findViewById(R.id.last_name);
-        username= findViewById(R.id.username);
-        email=findViewById(R.id.email);
-        phone=findViewById(R.id.phone_no);
-        room=findViewById(R.id.room_no);
-        password= findViewById(R.id.password);
-        submit=findViewById(R.id.signup_btn);
-        login=findViewById(R.id.login_screen);
+        firstname = findViewById(R.id.first_name);
+        lastname = findViewById(R.id.last_name);
+        username = findViewById(R.id.username);
+        email = findViewById(R.id.email);
+        phone = findViewById(R.id.phone_no);
+        room = findViewById(R.id.room_no);
+        password = findViewById(R.id.password);
+        submit = findViewById(R.id.signup_btn);
+        login = findViewById(R.id.login_screen);
 
 
         submit.setOnClickListener((view) -> {
             postData();
-            Intent intent = new Intent(Signup.this,Login.class);
+            Intent intent = new Intent(Signup.this, Login.class);
             startActivity(intent);
         });
 
         login.setOnClickListener((view) -> {
-            Intent intent = new Intent(Signup.this,Login.class);
+            Intent intent = new Intent(Signup.this, Login.class);
             startActivity(intent);
         });
 
@@ -62,13 +61,13 @@ public class Signup extends AppCompatActivity {
         JSONObject object = new JSONObject();
         try {
             //input your API parameters
-            object.put("first_name",firstname.getText().toString());
-            object.put("last_name",lastname.getText().toString());
-            object.put("username",username.getText().toString());
-            object.put("email",email.getText().toString());
-            object.put("phone_num",phone.getText().toString());
-            object.put("room_no",room.getText().toString());
-            object.put("password",password.getText().toString());
+            object.put("first_name", firstname.getText().toString());
+            object.put("last_name", lastname.getText().toString());
+            object.put("username", username.getText().toString());
+            object.put("email", email.getText().toString());
+            object.put("phone_num", phone.getText().toString());
+            object.put("room_no", room.getText().toString());
+            object.put("password", password.getText().toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -78,12 +77,12 @@ public class Signup extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.d("D","Done");
+                        Log.d("D", "Done");
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.d("D",error.getMessage());
+                Log.d("D", error.getMessage());
             }
         });
         requestQueue.add(jsonObjectRequest);

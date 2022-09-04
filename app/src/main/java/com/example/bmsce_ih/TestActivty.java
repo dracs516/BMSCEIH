@@ -10,16 +10,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.cardview.widget.CardView;
 
-public class TestActivty extends AppCompatActivity
-{
+public class TestActivty extends AppCompatActivity {
     private int starter = 66; //ASCII code for `B`
     LinearLayoutCompat cards;
     Button buttonAdd;
     Button buttonDoSth;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activty_test);
 
@@ -27,11 +25,9 @@ public class TestActivty extends AppCompatActivity
         buttonAdd = findViewById(R.id.butAdd);
         buttonDoSth = findViewById(R.id.butDoSth);
 
-        buttonAdd.setOnClickListener(new View.OnClickListener()
-        {
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 CardView newCard = new CardView(TestActivty.this);
                 getLayoutInflater().inflate(R.layout.card_base, newCard);
 
@@ -46,26 +42,21 @@ public class TestActivty extends AppCompatActivity
             }
         });
 
-        buttonDoSth.setOnClickListener(new View.OnClickListener()
-        {
+        buttonDoSth.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 findBlockAndDoSomething("B");
             }
         });
     }
 
-    private void findBlockAndDoSomething(String name)
-    {
+    private void findBlockAndDoSomething(String name) {
         Log.d("MyTAG", "CLICK");
 
-        for (int i = 0; i < cards.getChildCount(); i++)
-        {
+        for (int i = 0; i < cards.getChildCount(); i++) {
             CardView selected = (CardView) cards.getChildAt(i);
 
-            if (selected.getTag() != null && selected.getTag().toString().equals(name))
-            {
+            if (selected.getTag() != null && selected.getTag().toString().equals(name)) {
                 // do something. E.g change block name
                 TextView textViewClassesBlock1 = selected.findViewById(R.id.textviewClassesBlock1);
                 textViewClassesBlock1.setText("Block XXX");

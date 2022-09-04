@@ -2,6 +2,7 @@ package com.example.bmsce_ih;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Pair;
@@ -22,18 +23,34 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+//import com.fasterxml.jackson.databind.ObjectMapper;
+//import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 
+import java.lang.reflect.Array;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 public class Login extends AppCompatActivity {
 
     //Variables
-    Button callSignUp,login_btn;
+    Button callSignUp, login_btn;
     ImageView image;
     TextView logoText, sloganText;
-    EditText username,password;
+    EditText username, password;
+
+    JSONObject obj;
 
     //Credentials
 
@@ -41,48 +58,58 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN );
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
 
         //Hooks
-        callSignUp=findViewById(R.id.signup_screen);
-        image=findViewById(R.id.logo_image);
-        logoText=findViewById(R.id.logo_name);
-        sloganText=findViewById(R.id.slogan_name);
-        username= findViewById(R.id.username);
-        password= findViewById(R.id.password);
-        login_btn=findViewById(R.id.login_btn);
+        callSignUp = findViewById(R.id.signup_screen);
+        image = findViewById(R.id.logo_image);
+        logoText = findViewById(R.id.logo_name);
+        sloganText = findViewById(R.id.slogan_name);
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
+        login_btn = findViewById(R.id.login_btn);
+
+//        Bundle bundle = new Bundle();
+//        bundle.putString("usr", username.getText().toString());
 
         login_btn.setOnClickListener((view) -> {
 //            postData();
 //            if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin"))
 //            {
-                Intent intent= new Intent(Login.this,Dashboard.class);
-                startActivity(intent) ;
+            String usr= username.getText().toString();
+
+            Intent intent = new Intent(Login.this, Dashboard.class);
+            intent.putExtra("usr",username.getText().toString());
+            startActivity(intent);
 //            }
         });
 
         callSignUp.setOnClickListener((view) -> {
-            Intent intent= new Intent(Login.this,Signup.class);
+            Intent intent = new Intent(Login.this, Signup.class);
+
 
             Pair[] pairs = new Pair[7];
 
-            pairs[0]=new Pair<View,String>(image,"logo_image");
-            pairs[1]=new Pair<View,String>(logoText,"logo_text");
-            pairs[2]=new Pair<View,String>(sloganText,"logo_desc");
-            pairs[3]=new Pair<View,String>(username,"username_trans");
-            pairs[4]=new Pair<View,String>(password,"password_trans");
-            pairs[5]=new Pair<View,String>(login_btn,"button_trans");
-            pairs[6]=new Pair<View,String>(callSignUp,"login_signup_trans");
+            pairs[0] = new Pair<View, String>(image, "logo_image");
+            pairs[1] = new Pair<View, String>(logoText, "logo_text");
+            pairs[2] = new Pair<View, String>(sloganText, "logo_desc");
+            pairs[3] = new Pair<View, String>(username, "username_trans");
+            pairs[4] = new Pair<View, String>(password, "password_trans");
+            pairs[5] = new Pair<View, String>(login_btn, "button_trans");
+            pairs[6] = new Pair<View, String>(callSignUp, "login_signup_trans");
 
-            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(Login.this,pairs);
-            startActivity(intent,options.toBundle()) ;
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(Login.this, pairs);
+            startActivity(intent, options.toBundle());
 
 
         });
 
-        }
+    }
 
+//    public String getUser() {
+//         return username.getText().toString();
+//    }
 
 
     public void postData() {
@@ -96,29 +123,49 @@ public class Login extends AppCompatActivity {
             e.printStackTrace();
         }
         // Enter the correct url for your api service site
-        String url = "http://10.210.32.134:3000/user/verify";
+        String url = "http://10.210.32.34:3000/user/verify";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, object,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
 
-
-
                         try {
-//                            if(response!=null)
-                            if (response.getString("data")=="true")
-                            {
-//                                username.setText(response);
-                                username.setText(response.toString());
-//                                Intent intent= new Intent(Login.this,Dashboard.class);
-//                                startActivity(intent) ;
+//                            String doc = response.getString("document");
+//                            String reqObj=doc.substring(1,doc.length()-1);
+
+
+                            JSONObject jsonObject = new JSONObject(response.toString());
+                            JSONArray jsonArray = jsonObject.getJSONArray("document");
+                            for(int i=0;i<jsonArray.length()-1;i++){
+                                obj= jsonArray.getJSONObject(i);
+
+//                                String objStr = obj.toString();
+//                                JSONObject room =
+                            username.setText(obj.getString("room_no"));
                             }
-                            else{
-                                Toast.makeText(Login.this, "Sign up first", Toast.LENGTH_SHORT).show();
-                            }
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+
+
+//                        try {
+//                            if (response.getString("Userdata") != null) {
+//                                username.setText(response.toString());
+//                            }
+//
+////                            if (response.getString("data") == "true") {
+//////                                username.setText(response);
+////                                username.setText(response.toString());
+//////                                Intent intent= new Intent(Login.this,Dashboard.class);
+//////                                startActivity(intent) ;
+//                            else {
+//                                Toast.makeText(Login.this, "Sign up first", Toast.LENGTH_SHORT).show();
+//                            }
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+
 
                     }
                 },

@@ -26,9 +26,11 @@
             android:textSize="22sp"
             />
 
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="6dp"
+        <TextView
+            android:id="@+id/desc"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/textviewClassesBlock1"
             android:layout_marginStart="10dp"
             />
