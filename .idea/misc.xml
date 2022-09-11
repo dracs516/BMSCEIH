@@ -22,9 +22,9 @@
         <entry key="app/src/main/res/layout/activity_home_screen.xml" value="0.24818840579710144" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.38055555555555554" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.24682971014492755" />
+        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.38256410256410256" />
         <entry key="app/src/main/res/layout/activty_test.xml" value="0.30833333333333335" />
-        <entry key="app/src/main/res/layout/card_base.xml" value="0.30833333333333335" />
+        <entry key="app/src/main/res/layout/card_base.xml" value="0.225" />
         <entry key="app/src/main/res/layout/card_resource.xml" value="0.2630769230769231" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.213768115942029" />
         <entry key="app/src/main/res/layout/events.xml" value="0.17157190635451505" />
@@ -38,6 +38,7 @@
         <entry key="app/src/main/res/layout/fragment_notice.xml" value="0.213768115942029" />
         <entry key="app/src/main/res/layout/fragment_noticeboard.xml" value="0.2164102564102564" />
         <entry key="app/src/main/res/layout/fragment_rules.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/hostel_dropdown.xml" value="0.3875" />
         <entry key="app/src/main/res/layout/notice.xml" value="0.10989010989010989" />
         <entry key="app/src/main/res/menu/bottom_navigation.xml" value="0.20827291983145257" />
         <entry key="app/src/main/res/menu/item_menu.xml" value="0.2421875" />

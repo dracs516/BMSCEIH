@@ -30,7 +30,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 //import com.fasterxml.jackson.databind.ObjectMapper;
 //import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
+//import org.json.simple.JSONValue;
 
 import java.lang.reflect.Array;
 import java.util.HashMap;
@@ -74,14 +74,12 @@ public class Login extends AppCompatActivity {
 //        bundle.putString("usr", username.getText().toString());
 
         login_btn.setOnClickListener((view) -> {
-//            postData();
+            postData();
 //            if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin"))
 //            {
-            String usr= username.getText().toString();
 
-            Intent intent = new Intent(Login.this, Dashboard.class);
-            intent.putExtra("usr",username.getText().toString());
-            startActivity(intent);
+//            Intent intent = new Intent(Login.this, Dashboard.class);
+//            startActivity(intent);
 //            }
         });
 
@@ -123,48 +121,50 @@ public class Login extends AppCompatActivity {
             e.printStackTrace();
         }
         // Enter the correct url for your api service site
-        String url = "http://10.210.32.34:3000/user/verify";
+        String url = "https://bmsih.herokuapp.com/user/verify";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, object,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
 
-                        try {
-//                            String doc = response.getString("document");
-//                            String reqObj=doc.substring(1,doc.length()-1);
-
-
-                            JSONObject jsonObject = new JSONObject(response.toString());
-                            JSONArray jsonArray = jsonObject.getJSONArray("document");
-                            for(int i=0;i<jsonArray.length()-1;i++){
-                                obj= jsonArray.getJSONObject(i);
-
-//                                String objStr = obj.toString();
-//                                JSONObject room =
-                            username.setText(obj.getString("room_no"));
-                            }
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-
 //                        try {
-//                            if (response.getString("Userdata") != null) {
-//                                username.setText(response.toString());
+////                            String doc = response.getString("document");
+////                            String reqObj=doc.substring(1,doc.length()-1);
+//
+//
+//                            JSONObject jsonObject = new JSONObject(response.toString());
+//                            JSONArray jsonArray = jsonObject.getJSONArray("document");
+//                            for(int i=0;i<jsonArray.length()-1;i++){
+//                                obj= jsonArray.getJSONObject(i);
+//
+////                                String objStr = obj.toString();
+////                                JSONObject room =
+//                            username.setText(obj.getString("room_no"));
 //                            }
 //
-////                            if (response.getString("data") == "true") {
-//////                                username.setText(response);
-////                                username.setText(response.toString());
-//////                                Intent intent= new Intent(Login.this,Dashboard.class);
-//////                                startActivity(intent) ;
-//                            else {
-//                                Toast.makeText(Login.this, "Sign up first", Toast.LENGTH_SHORT).show();
-//                            }
 //                        } catch (JSONException e) {
 //                            e.printStackTrace();
 //                        }
+                        try {
+//                            if (response.getString("Userdata") != null) {
+//                                username.setText(response.toString());
+//                            }
+                            if (response.getInt("status") == 200) {
+////                                username.setText(response);s
+//                                username.setText(response.toString());
+                                Intent intent = new Intent(Login.this, Dashboard.class);
+                                String usr = username.getText().toString();
+                                intent.putExtra("usr", username.getText().toString());
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                Toast.makeText(Login.this, "Sign up first", Toast.LENGTH_SHORT).show();
+                                Intent intent2 = new Intent(Login.this, Signup.class);
+                                startActivity(intent2);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
 
 
                     }

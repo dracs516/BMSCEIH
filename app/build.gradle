@@ -23,6 +23,16 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+//
+//
+//        debug {
+//            buildConfigField "String", "RealmAppId", "data-msdux"
+//        }
+//
+//        release {
+//            buildConfigField "String", "RealmAppId", "data-msdux"
+//        }
+
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -31,6 +41,10 @@ android {
     buildFeatures {
         viewBinding true
     }
+// few other things
+
+
+
 }
 
 //realm {

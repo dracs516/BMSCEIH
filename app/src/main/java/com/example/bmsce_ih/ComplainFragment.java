@@ -30,6 +30,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import java.util.Date;
+
 public class ComplainFragment extends Fragment {
     Dialog createDialog;
     EditText title, description;
@@ -38,6 +40,8 @@ public class ComplainFragment extends Fragment {
     JSONObject obj;
     LinearLayout cards;
     TextView comaplaint;
+    TextView date;
+    TextView token;
 
 
     private Context mContext;
@@ -138,7 +142,7 @@ public class ComplainFragment extends Fragment {
             e.printStackTrace();
         }
         // Enter the correct url for your api service site
-        String url = "http://192.168.8.161:3000/complaint/register/complaint";
+        String url = "https://bmsih.herokuapp.com/complaint/register/complaint";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, object,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -172,7 +176,7 @@ public class ComplainFragment extends Fragment {
             e.printStackTrace();
         }
         // Enter the correct url for your api service site
-        String url = "http://192.168.8.161:3000/complaint/getcomplaint";
+        String url = "https://bmsih.herokuapp.com/complaint/getcomplaint";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, object,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -189,7 +193,7 @@ public class ComplainFragment extends Fragment {
                             JSONArray jsonArray = jsonObject.getJSONArray("Userdata");
 
 
-                            for (int i = jsonArray.length()-1; i >=0 ; i--) {
+                            for (int i = jsonArray.length() - 1; i >= 0; i--) {
 
                                 obj = jsonArray.getJSONObject(i);
 
@@ -198,9 +202,13 @@ public class ComplainFragment extends Fragment {
 
                                 TextView t = newCard.findViewById(R.id.textviewClassesBlock1);
                                 TextView d = newCard.findViewById(R.id.desc);
+                                TextView dt = newCard.findViewById(R.id.date);
+                                TextView token = newCard.findViewById(R.id.tokenno);
 //                        String current = Character.toString((char) starter++);
-                                t.setText(obj.getString("title"));
-                                d.setText(obj.getString("description"));
+                                t.setText("• " + obj.getString("title"));
+                                d.setText("- " + obj.getString("description"));
+                                dt.setText(obj.getString("timestamps"));
+                                token.setText("Token No: " + obj.getString("_id"));
                                 newCard.setTag(obj.getString("title"));
                                 cards.addView(newCard);
 
