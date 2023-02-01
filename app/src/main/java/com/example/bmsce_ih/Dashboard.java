@@ -123,8 +123,8 @@ TextView text;
                         public void onClick(DialogInterface arg0, int arg1) {
                             // MainActivity.super.onBackPressed();
                             ExitActivity.exitApplication(getApplicationContext());
-                            finish();
-                            moveTaskToBack(true);
+//                            finish();
+//                            moveTaskToBack(true);
                         }
                     }).create().show();
         }
