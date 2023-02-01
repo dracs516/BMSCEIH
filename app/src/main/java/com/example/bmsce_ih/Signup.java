@@ -108,7 +108,7 @@ public class Signup extends AppCompatActivity {
             e.printStackTrace();
         }
         // Enter the correct url for your api service site
-        String url = "https://bmsih.herokuapp.com/user/register";
+        String url = "https://bmsbackend-production-fc41.up.railway.app/user/register";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, object,
                 new Response.Listener<JSONObject>() {
                     @Override

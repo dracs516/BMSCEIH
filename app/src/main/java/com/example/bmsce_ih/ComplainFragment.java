@@ -142,7 +142,7 @@ public class ComplainFragment extends Fragment {
             e.printStackTrace();
         }
         // Enter the correct url for your api service site
-        String url = "https://bmsih.herokuapp.com/complaint/register/complaint";
+        String url = "https://bmsbackend-production-fc41.up.railway.app/complaint/register/complaint";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, object,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -176,7 +176,7 @@ public class ComplainFragment extends Fragment {
             e.printStackTrace();
         }
         // Enter the correct url for your api service site
-        String url = "https://bmsih.herokuapp.com/complaint/getcomplaint";
+        String url = "https://bmsbackend-production-fc41.up.railway.app/complaint/getcomplaint";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, object,
                 new Response.Listener<JSONObject>() {
                     @Override
