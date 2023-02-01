@@ -1,6 +1,7 @@
 package com.example.bmsce_ih;
 
 import android.app.ActivityOptions;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -51,6 +52,7 @@ public class Login extends AppCompatActivity {
     EditText username, password;
 
     JSONObject obj;
+    SharedPreferences sharedpreferences;
 
     //Credentials
 
@@ -61,6 +63,8 @@ public class Login extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
 
+        sharedpreferences = getSharedPreferences("session", MODE_PRIVATE);
+
         //Hooks
         callSignUp = findViewById(R.id.signup_screen);
         image = findViewById(R.id.logo_image);
@@ -69,6 +73,12 @@ public class Login extends AppCompatActivity {
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         login_btn = findViewById(R.id.login_btn);
+
+
+        Intent intent1 = new Intent(Login.this, Dashboard.class);
+        if (sharedpreferences.contains("uss") && sharedpreferences.contains("pss")) {
+            startActivity(intent1);
+        }
 
 //        Bundle bundle = new Bundle();
 //        bundle.putString("usr", username.getText().toString());
@@ -155,6 +165,12 @@ public class Login extends AppCompatActivity {
                                 Intent intent = new Intent(Login.this, Dashboard.class);
                                 String usr = username.getText().toString();
                                 intent.putExtra("usr", username.getText().toString());
+
+                                SharedPreferences.Editor editor = sharedpreferences.edit();
+                                editor.putString("uss", username.getText().toString());
+                                editor.putString("pss", password.getText().toString());
+                                editor.commit();
+
                                 startActivity(intent);
                                 finish();
                             } else {

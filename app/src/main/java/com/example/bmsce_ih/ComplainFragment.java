@@ -121,8 +121,8 @@ public class ComplainFragment extends Fragment {
             @Override
             public void onClick(View view2) {
                 postDataComplaint();
-                viewComplaint(view);
-                complaint_list.setVisibility(View.VISIBLE);
+//                viewComplaint(view);
+//                complaint_list.setVisibility(View.VISIBLE);
             }
         });
     }

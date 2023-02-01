@@ -8,13 +8,60 @@
     android:orientation="vertical"
     android:background="@color/home_bg"
 >
+    <LinearLayout
+        android:paddingTop="20dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="0dp">
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello"
+            android:textSize="20sp"
+            android:layout_below="@id/notice_title"
+            android:layout_toRightOf="@id/notice_img"
+            android:paddingLeft="10dp"
+            />
 
+        <TextView
+            android:id="@+id/user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text=""
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:fontFamily="@font/alfa_slab_one"
+            android:textAllCaps="true"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/logout_btn"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:padding="0dp"
+        android:text="Log Out"
+        android:textSize="10dp"
+        android:background="#f6fff2"
+        android:textColor="#fff"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:transitionName="button_trans"/>
+    </LinearLayout>
             <LinearLayout
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:paddingLeft="20dp"
                 android:paddingBottom="20dp"
                 android:paddingRight="20dp"
