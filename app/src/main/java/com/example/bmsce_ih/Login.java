@@ -109,13 +109,20 @@ public class Login extends AppCompatActivity {
 
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(Login.this, pairs);
             startActivity(intent, options.toBundle());
+//            finish();
 
 
         });
 
     }
 
-//    public String getUser() {
+//    @Override
+//    protected void onRestart() {
+//        super.onRestart();
+//        new MainActivity();
+//    }
+
+    //    public String getUser() {
 //         return username.getText().toString();
 //    }
 
@@ -172,11 +179,12 @@ public class Login extends AppCompatActivity {
                                 editor.commit();
 
                                 startActivity(intent);
-                                finish();
+//                                finish();
                             } else {
                                 Toast.makeText(Login.this, "Sign up first", Toast.LENGTH_SHORT).show();
                                 Intent intent2 = new Intent(Login.this, Signup.class);
                                 startActivity(intent2);
+                                finish();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

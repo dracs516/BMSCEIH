@@ -33,6 +33,8 @@ Button logout;
         return view;
     }
 
+
+
     private void init(View view) {
         logout = view.findViewById(R.id.logout_btn);
         usr = view.findViewById(R.id.user);

@@ -1,10 +1,12 @@
 package com.example.bmsce_ih;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -92,12 +94,42 @@ TextView text;
         fm.beginTransaction().add(R.id.fragment_container, fragment3, "3").hide(fragment3).commit();
         fm.beginTransaction().add(R.id.fragment_container, fragment2, "2").hide(fragment2).commit();
         fm.beginTransaction().add(R.id.fragment_container, fragment1, "1").commit();
+//        finish();
 
 //        Login lgn  = new Login();
 
 //        String u = lgn.getUser();
 //        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,new NoticeboardFragment()).commit();
     }
+
+
+    @Override
+    public void onBackPressed() {
+        FragmentManager manager = getSupportFragmentManager();
+
+        if (manager.getBackStackEntryCount() > 1) {
+            // If there are back-stack entries, leave the FragmentActivity
+            // implementation take care of them.
+            manager.popBackStack();
+
+        } else {
+            // Otherwise, ask user if he wants to leave :)
+            new AlertDialog.Builder(this)
+                    .setTitle("Really Exit?")
+                    .setMessage("Are you sure you want to exit?")
+                    .setNegativeButton(android.R.string.no, null)
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            // MainActivity.super.onBackPressed();
+                            ExitActivity.exitApplication(getApplicationContext());
+                            finish();
+                            moveTaskToBack(true);
+                        }
+                    }).create().show();
+        }
+
+
 
 //    private boolean loadFragments(Fragment fragment) {
 //
@@ -153,4 +185,13 @@ TextView text;
 //                }
 //
 //            };
+}
+
+//    @Override
+//    protected void onRestart() {
+//        super.onRestart();
+//        new MainActivity();
+////        moveTaskToBack(true);
+////        super.onRestart();
+//    }
 }

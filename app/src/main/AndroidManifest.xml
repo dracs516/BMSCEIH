@@ -17,6 +17,10 @@
         android:theme="@style/Theme.BMSCEIH"
         tools:targetApi="31">
         <activity
+            android:name=".ExitActivity"
+            android:theme="@android:style/Theme.NoDisplay"
+            android:autoRemoveFromRecents="true"/>
+        <activity
             android:name=".Dashboard"
             android:exported="false" />
         <activity
